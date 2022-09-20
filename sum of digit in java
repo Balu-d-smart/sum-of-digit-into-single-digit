@@ -1,0 +1,28 @@
+import java.util.Scanner;
+import java.io.*;
+class Main {
+     int getSum(int n)
+    {
+        int sum=0;
+    while(n!=0 || sum > 9)
+    { 
+        if (n == 0) {
+                n = sum;
+                sum = 0;
+            }
+        sum+=n%10;
+        n=n/10;
+    }
+    return sum;
+    }
+       
+    public static void main(String[] args) 
+    {
+        Main obj= new Main();
+        System.out.println("enter a number  : ");
+        Scanner sc = new Scanner(System.in);
+        int n=sc.nextInt();
+        System.out.println("the number is  : "+n  );
+        System.out.println(obj.getSum(n));
+    }
+}
